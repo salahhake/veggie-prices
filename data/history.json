@@ -1,14 +1,18 @@
 {
+  "tomato@boufarik": [
+    {
+      "date": "2026-10-01",
+      "price": 90.0
+    },
+    {
+      "date": "2026-10-02",
+      "price": 130.0
+    }
+  ],
   "potato@boufarik": [
     {
       "date": "2026-10-02",
       "price": 60.0
-    }
-  ],
-  "tomato@boufarik": [
-    {
-      "date": "2026-10-02",
-      "price": 120.0
     }
   ],
   "banana@boufarik": [
@@ -23,10 +27,82 @@
       "price": 80.0
     }
   ],
-  "فلفل حلو@boufarik": [
+  "pepper@boufarik": [
     {
       "date": "2026-10-02",
       "price": 130.0
+    }
+  ],
+  "hot pepper@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 130.0
+    }
+  ],
+  "lettuce@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 110.0
+    }
+  ],
+  "eggplant@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 180.0
+    }
+  ],
+  "zucchini@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 120.0
+    }
+  ],
+  "spinach@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 100.0
+    }
+  ],
+  "green beans@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 150.0
+    }
+  ],
+  "onion@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 80.0
+    }
+  ],
+  "cucunber@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 140.0
+    }
+  ],
+  "fennel@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 120.0
+    }
+  ],
+  "artichoke@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 110.0
+    }
+  ],
+  "fava beans@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 80.0
+    }
+  ],
+  "strawberries@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 250.0
     }
   ]
 }

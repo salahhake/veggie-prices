@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-02T16:22:11+00:00",
+  "generated_at": "2026-10-02T17:02:24+00:00",
   "prices": {
-    "potato@boufarik": {
-      "product": "potato",
-      "category": "vegetable",
-      "price": 60.0,
+    "tomato@boufarik": {
+      "product": "tomato",
+      "category": "fruit",
+      "price": 130.0,
       "unit": "kg",
       "market": "boufarik",
       "currency": "DZD",
       "date": "2026-10-02",
-      "change": 0
+      "change": 40.0
     },
-    "tomato@boufarik": {
-      "product": "tomato",
+    "potato@boufarik": {
+      "product": "potato",
       "category": "vegetable",
-      "price": 120.0,
+      "price": 60.0,
       "unit": "kg",
       "market": "boufarik",
       "currency": "DZD",
@@ -41,10 +41,130 @@
       "date": "2026-10-02",
       "change": 0
     },
-    "فلفل حلو@boufarik": {
-      "product": "فلفل حلو",
+    "pepper@boufarik": {
+      "product": "pepper",
       "category": "vegetable",
       "price": 130.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "hot pepper@boufarik": {
+      "product": "hot pepper",
+      "category": "vegetable",
+      "price": 130.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "lettuce@boufarik": {
+      "product": "lettuce",
+      "category": "vegetable",
+      "price": 110.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "eggplant@boufarik": {
+      "product": "eggplant",
+      "category": "vegetable",
+      "price": 180.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "zucchini@boufarik": {
+      "product": "zucchini",
+      "category": "vegetable",
+      "price": 120.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "spinach@boufarik": {
+      "product": "spinach",
+      "category": "vegetable",
+      "price": 100.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "green beans@boufarik": {
+      "product": "green beans",
+      "category": "vegetable",
+      "price": 150.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "onion@boufarik": {
+      "product": "onion",
+      "category": "vegetable",
+      "price": 80.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "cucunber@boufarik": {
+      "product": "cucunber",
+      "category": "vegetable",
+      "price": 140.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "fennel@boufarik": {
+      "product": "fennel",
+      "category": "vegetable",
+      "price": 120.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "artichoke@boufarik": {
+      "product": "artichoke",
+      "category": "vegetable",
+      "price": 110.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "fava beans@boufarik": {
+      "product": "fava beans",
+      "category": "vegetable",
+      "price": 80.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "strawberries@boufarik": {
+      "product": "strawberries",
+      "category": "vegetable",
+      "price": 250.0,
       "unit": "kg",
       "market": "boufarik",
       "currency": "DZD",

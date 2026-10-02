@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T02:12:54+00:00",
+  "generated_at": "2026-10-02T02:21:21+00:00",
   "prices": {
     "potato@boufarik": {
       "product": "potato",
@@ -23,7 +23,7 @@
     },
     "banana@boufarik": {
       "product": "banana",
-      "category": "vegetable",
+      "category": "fruit",
       "price": 400.0,
       "unit": "kg",
       "market": "boufarik",

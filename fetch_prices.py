@@ -4,7 +4,14 @@ from pathlib import Path
 
 import requests
 
-SHEET_CSV_URL = os.environ.get("SHEET_CSV_URL")
+import re
+
+_raw = os.environ.get("SHEET_CSV_URL") or ""
+if "/edit" in _raw:
+    _id = re.search(r"/d/([\w-]+)", _raw).group(1)
+    _gid = re.search(r"gid=(\d+)", _raw)
+    _raw = f"https://docs.google.com/spreadsheets/d/{_id}/export?format=csv&gid={_gid.group(1) if _gid else 0}"
+SHEET_CSV_URL = _raw
 DATA = Path("data")
 DATA.mkdir(exist_ok=True)
 

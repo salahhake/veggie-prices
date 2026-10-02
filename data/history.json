@@ -19,8 +19,14 @@
   ],
   "carrot@boufarik": [
     {
-      "date": "2026-10-03",
+      "date": "2026-10-02",
       "price": 80.0
+    }
+  ],
+  "paprika@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 130.0
     }
   ]
 }

@@ -1,4 +1,14 @@
 {
+  "potato@boufarik": [
+    {
+      "date": "2026-10-01",
+      "price": 60.0
+    },
+    {
+      "date": "2026-10-02",
+      "price": 110.0
+    }
+  ],
   "tomato@boufarik": [
     {
       "date": "2026-10-01",
@@ -7,12 +17,6 @@
     {
       "date": "2026-10-02",
       "price": 130.0
-    }
-  ],
-  "potato@boufarik": [
-    {
-      "date": "2026-10-02",
-      "price": 60.0
     }
   ],
   "banana@boufarik": [
@@ -103,6 +107,78 @@
     {
       "date": "2026-10-02",
       "price": 250.0
+    }
+  ],
+  "watermelon@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 460.0
+    }
+  ],
+  "oranges@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 250.0
+    }
+  ],
+  "pears@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 700.0
+    }
+  ],
+  "grapes@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 250.0
+    }
+  ],
+  "apricots@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 150.0
+    }
+  ],
+  "peaches@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 250.0
+    }
+  ],
+  "apples@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 150.0
+    }
+  ],
+  "pineapple@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 1400.0
+    }
+  ],
+  "kiwi@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 1400.0
+    }
+  ],
+  "cherries@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 400.0
+    }
+  ],
+  "mango@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 1400.0
+    }
+  ],
+  "lemons@boufarik": [
+    {
+      "date": "2026-10-02",
+      "price": 400.0
     }
   ]
 }

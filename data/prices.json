@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-10-02T17:02:24+00:00",
+  "generated_at": "2026-10-02T17:23:31+00:00",
   "prices": {
+    "potato@boufarik": {
+      "product": "potato",
+      "category": "vegetable",
+      "price": 110.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 50.0
+    },
     "tomato@boufarik": {
       "product": "tomato",
       "category": "fruit",
@@ -10,16 +20,6 @@
       "currency": "DZD",
       "date": "2026-10-02",
       "change": 40.0
-    },
-    "potato@boufarik": {
-      "product": "potato",
-      "category": "vegetable",
-      "price": 60.0,
-      "unit": "kg",
-      "market": "boufarik",
-      "currency": "DZD",
-      "date": "2026-10-02",
-      "change": 0
     },
     "banana@boufarik": {
       "product": "banana",
@@ -165,6 +165,126 @@
       "product": "strawberries",
       "category": "vegetable",
       "price": 250.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "watermelon@boufarik": {
+      "product": "watermelon",
+      "category": "fruit",
+      "price": 460.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "oranges@boufarik": {
+      "product": "oranges",
+      "category": "fruit",
+      "price": 250.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "pears@boufarik": {
+      "product": "pears",
+      "category": "fruit",
+      "price": 700.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "grapes@boufarik": {
+      "product": "grapes",
+      "category": "fruit",
+      "price": 250.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "apricots@boufarik": {
+      "product": "apricots",
+      "category": "fruit",
+      "price": 150.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "peaches@boufarik": {
+      "product": "peaches",
+      "category": "fruit",
+      "price": 250.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "apples@boufarik": {
+      "product": "apples",
+      "category": "fruit",
+      "price": 150.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "pineapple@boufarik": {
+      "product": "pineapple",
+      "category": "fruit",
+      "price": 1400.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "kiwi@boufarik": {
+      "product": "kiwi",
+      "category": "fruit",
+      "price": 1400.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "cherries@boufarik": {
+      "product": "cherries",
+      "category": "fruit",
+      "price": 400.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "mango@boufarik": {
+      "product": "mango",
+      "category": "fruit",
+      "price": 1400.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    },
+    "lemons@boufarik": {
+      "product": "lemons",
+      "category": "fruit",
+      "price": 400.0,
       "unit": "kg",
       "market": "boufarik",
       "currency": "DZD",

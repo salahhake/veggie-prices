@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-10-02T01:24:27+00:00",
+  "prices": {
+    "potato@boufarik": {
+      "product": "potato",
+      "category": "vegetable",
+      "price": 85.0,
+      "unit": "kg",
+      "market": "boufarik",
+      "currency": "DZD",
+      "date": "2026-10-02",
+      "change": 0
+    }
+  }
+}

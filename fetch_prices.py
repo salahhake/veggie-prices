@@ -8,30 +8,52 @@ SHEET_CSV_URL = os.environ.get("SHEET_CSV_URL")
 DATA = Path("data")
 DATA.mkdir(exist_ok=True)
 
+AR_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩٫٬", "0123456789.,")
+DATE_FORMATS = ["%Y-%m-%d", "%Y/%m/%d", "%d/%m/%Y", "%d-%m-%Y", "%m/%d/%Y"]
+
+
+def clean(v):
+    return (v or "").translate(AR_DIGITS).strip()
+
+
+def parse_date(s):
+    s = clean(s)
+    for fmt in DATE_FORMATS:
+        try:
+            return datetime.strptime(s, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    raise ValueError(f"bad date: {s!r}")
+
 
 def load_rows():
     r = requests.get(SHEET_CSV_URL, timeout=30)
     r.raise_for_status()
     r.encoding = "utf-8"
+    reader = csv.DictReader(io.StringIO(r.text))
+    print("columns:", reader.fieldnames)
     rows = []
-    for i, row in enumerate(csv.DictReader(io.StringIO(r.text)), start=2):
+    for i, row in enumerate(reader, start=2):
+        if not any(clean(v) for v in row.values()):
+            continue
         try:
-            date = row["date"].strip()
-            datetime.strptime(date, "%Y-%m-%d")
-            product = row["product"].strip().lower()
-            price = float(row["price"].replace(",", "."))
-            if not product or price <= 0:
-                raise ValueError
-        except (KeyError, ValueError, AttributeError):
-            if any((v or "").strip() for v in row.values()):
-                print(f"skip row {i}", file=sys.stderr)
+            row = {(k or "").strip().lower(): v for k, v in row.items()}
+            date = parse_date(row.get("date"))
+            product = clean(row.get("product")).lower()
+            price = float(clean(row.get("price")).replace(",", "."))
+            if not product:
+                raise ValueError("empty product")
+            if price <= 0:
+                raise ValueError("price must be > 0")
+        except Exception as e:
+            print(f"skip row {i}: {e} | raw: {dict(row)}", file=sys.stderr)
             continue
         rows.append({
             "date": date, "product": product, "price": price,
-            "category": (row.get("category") or "").strip(),
-            "unit": (row.get("unit") or "kg").strip(),
-            "market": (row.get("market") or "").strip(),
-            "currency": (row.get("currency") or "DZD").strip().upper(),
+            "category": clean(row.get("category")),
+            "unit": clean(row.get("unit")) or "kg",
+            "market": clean(row.get("market")),
+            "currency": (clean(row.get("currency")) or "DZD").upper(),
         })
     return rows
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T16:14:50+00:00",
+  "generated_at": "2026-10-02T16:22:11+00:00",
   "prices": {
     "potato@boufarik": {
       "product": "potato",
@@ -41,8 +41,8 @@
       "date": "2026-10-02",
       "change": 0
     },
-    "bell pepper@boufarik": {
-      "product": "bell pepper",
+    "فلفل حلو@boufarik": {
+      "product": "فلفل حلو",
       "category": "vegetable",
       "price": 130.0,
       "unit": "kg",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T16:04:39+00:00",
+  "generated_at": "2026-10-02T16:14:50+00:00",
   "prices": {
     "potato@boufarik": {
       "product": "potato",
@@ -41,8 +41,8 @@
       "date": "2026-10-02",
       "change": 0
     },
-    "paprika@boufarik": {
-      "product": "paprika",
+    "bell pepper@boufarik": {
+      "product": "bell pepper",
       "category": "vegetable",
       "price": 130.0,
       "unit": "kg",

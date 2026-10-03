@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T18:44:01+00:00",
+  "generated_at": "2026-10-03T23:38:17+00:00",
   "prices": {
     "potato@boufarik": {
       "product": "potato",
@@ -13,7 +13,7 @@
     },
     "tomato@boufarik": {
       "product": "tomato",
-      "category": "fruit",
+      "category": "vegetable",
       "price": 130.0,
       "unit": "kg",
       "market": "boufarik",
@@ -163,7 +163,7 @@
     },
     "strawberries@boufarik": {
       "product": "strawberries",
-      "category": "vegetable",
+      "category": "fruit",
       "price": 250.0,
       "unit": "kg",
       "market": "boufarik",
@@ -231,8 +231,8 @@
       "date": "2026-10-02",
       "change": 0
     },
-    "apples@boufarik": {
-      "product": "apples",
+    "apple@boufarik": {
+      "product": "apple",
       "category": "fruit",
       "price": 150.0,
       "unit": "kg",

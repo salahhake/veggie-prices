@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T23:39:17+00:00",
+  "generated_at": "2026-10-04T00:07:49+00:00",
   "prices": {
     "potato@boufarik": {
       "product": "potato",
@@ -281,8 +281,8 @@
       "date": "2026-10-02",
       "change": 0
     },
-    "lemons@boufarik": {
-      "product": "lemons",
+    "lemone@boufarik": {
+      "product": "lemone",
       "category": "fruit",
       "price": 400.0,
       "unit": "kg",

@@ -1,0 +1,125 @@
+import csv, io, json, os, re, sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+import requests
+
+# رابط الشيت: يقبل رابط التصدير أو رابط الصفحة العادية (/edit) ويصحّحه تلقائياً
+_raw = os.environ.get("SHEET_CSV_URL") or ""
+if "/edit" in _raw:
+    _id = re.search(r"/d/([\w-]+)", _raw).group(1)
+    _gid = re.search(r"gid=(\d+)", _raw)
+    _raw = f"https://docs.google.com/spreadsheets/d/{_id}/export?format=csv&gid={_gid.group(1) if _gid else 0}"
+SHEET_CSV_URL = _raw
+
+DATA = Path("data")
+DATA.mkdir(exist_ok=True)
+AUTO_FILE = DATA / "auto_rows.csv"
+
+AR_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩٫٬", "0123456789.,")
+DATE_FORMATS = ["%Y-%m-%d", "%Y/%m/%d", "%d/%m/%Y", "%d-%m-%Y", "%m/%d/%Y"]
+
+
+def clean(v):
+    return (v or "").translate(AR_DIGITS).strip()
+
+
+def text(v):
+    return (v or "").strip()
+
+
+def key_of(product):
+    return re.sub(r"[\s-]+", "_", product.strip().lower())
+
+
+def parse_date(s):
+    s = clean(s)
+    for fmt in DATE_FORMATS:
+        try:
+            return datetime.strptime(s, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    raise ValueError(f"bad date: {s!r}")
+
+
+def parse_rows(csv_text, prio, label):
+    """prio: 0 = الذكاء الاصطناعي، 1 = الشيت اليدوي (الشيت يغلب عند التعارض)"""
+    reader = csv.DictReader(io.StringIO(csv_text))
+    print(f"{label} columns:", reader.fieldnames)
+    rows = []
+    for i, row in enumerate(reader, start=2):
+        if not any(clean(v) for v in row.values()):
+            continue
+        try:
+            row = {(k or "").strip().lower(): v for k, v in row.items()}
+            date = parse_date(row.get("date"))
+            product = clean(row.get("product")).lower()
+            price = float(clean(row.get("price")).replace(",", "."))
+            if not product:
+                raise ValueError("empty product")
+            if price <= 0:
+                raise ValueError("price must be > 0")
+        except Exception as e:
+            print(f"skip {label} row {i}: {e} | raw: {dict(row)}", file=sys.stderr)
+            continue
+        rows.append({
+            "date": date, "product": product, "price": price, "prio": prio,
+            "category": clean(row.get("category")),
+            "unit": clean(row.get("unit")) or "kg",
+            "market": clean(row.get("market")),
+            "currency": (clean(row.get("currency")) or "DZD").upper(),
+            "name_ar": text(row.get("name_ar")),
+            "name_en": text(row.get("name_en")),
+        })
+    return rows
+
+
+def load_rows():
+    r = requests.get(SHEET_CSV_URL, timeout=30)
+    r.raise_for_status()
+    r.encoding = "utf-8"
+    rows = parse_rows(r.text, 1, "sheet")
+    if AUTO_FILE.exists():
+        rows += parse_rows(AUTO_FILE.read_text("utf-8"), 0, "auto")
+    return rows
+
+
+def main():
+    if not SHEET_CSV_URL:
+        sys.exit("SHEET_CSV_URL is not set")
+    rows = load_rows()
+    if not rows:
+        sys.exit("No valid rows, keeping old data")
+    rows.sort(key=lambda x: (x["date"], x["prio"]))   # الشيت يأتي بعد الآلي في نفس اليوم فيغلبه
+
+    latest, history, names = {}, {}, {}
+    for r in rows:
+        key = f'{r["product"]}@{r["market"]}' if r["market"] else r["product"]
+        prev = latest.get(key)
+        entry = {k: r[k] for k in ("product", "category", "price", "unit", "market", "currency")}
+        entry["date"] = r["date"]
+        entry["change"] = round(r["price"] - prev["price"], 2) if prev else 0
+        latest[key] = entry
+        series = history.setdefault(key, [])
+        if series and series[-1]["date"] == r["date"]:
+            series[-1]["price"] = r["price"]
+        else:
+            series.append({"date": r["date"], "price": r["price"]})
+    # الأسماء: الشيت دائماً يغلب الآلي، ثم الأحدث
+    for r in sorted(rows, key=lambda x: (x["prio"], x["date"])):
+        n = names.setdefault(key_of(r["product"]), {})
+        if r["name_ar"]:
+            n["ar"] = r["name_ar"]
+        if r["name_en"]:
+            n["en"] = r["name_en"]
+    names = {k: v for k, v in names.items() if v}
+
+    out = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "prices": latest}
+    (DATA / "prices.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), "utf-8")
+    (DATA / "history.json").write_text(json.dumps(history, ensure_ascii=False, indent=2), "utf-8")
+    (DATA / "names.json").write_text(json.dumps(names, ensure_ascii=False, indent=2), "utf-8")
+    print(f"done: {len(latest)} items, {len(rows)} rows, {len(names)} names")
+
+
+if __name__ == "__main__":
+    main()

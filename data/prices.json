@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T02:11:26+00:00",
+  "generated_at": "2026-10-13T02:17:20+00:00",
   "prices": {
     "potato@boufarik": {
       "product": "potato",
@@ -264,7 +264,7 @@
     "cherries@boufarik": {
       "product": "cherries",
       "category": "fruit",
-      "price": 400.0,
+      "price": 150.0,
       "unit": "kg",
       "market": "boufarik",
       "currency": "DZD",
